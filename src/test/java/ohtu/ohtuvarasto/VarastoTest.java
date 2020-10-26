@@ -65,4 +65,52 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+    @Test
+    public void eiVoiLaittaaNega() {
+        varasto.lisaaVarastoon(-100);
+        assertEquals(10, varasto.getTilavuus(), vertailuTarkkuus);
+
+    }
+    @Test
+    public void eiVoiOttaaNega(){
+        varasto.otaVarastosta(-100);
+        assertEquals(10, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void eiVoiLaittaaLiikaa() {
+        varasto.lisaaVarastoon(100);
+        assertEquals(10, varasto.getTilavuus(), vertailuTarkkuus);
+
+    }
+    @Test
+    public void eiVoiOttaaLiikaa(){
+        varasto.otaVarastosta(100);
+        assertEquals(10, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void vaaraVarast(){
+        Varasto v = new Varasto(-3);
+        assertEquals(0, v.getTilavuus(), vertailuTarkkuus);
+    }
+    @Test
+    public void customVarastoHetiTaysi(){
+        Varasto cv = new Varasto(10,10);
+        assertEquals(0, cv.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    @Test
+    public void customVarastoVaara(){
+        Varasto va = new Varasto(-1, 3);
+        assertEquals(0, va.getTilavuus(), vertailuTarkkuus);
+    }
+    @Test
+    public void tulostusSkulaa(){
+        assertEquals("saldo = 0.0, vielä tilaa 10.0", varasto.toString());
+    }    
+    @Test
+    public void alkuSaldoNeg(){
+        Varasto b = new Varasto(10, -2);
+        assertEquals(0, b.getSaldo(), vertailuTarkkuus);
+    }
 }
