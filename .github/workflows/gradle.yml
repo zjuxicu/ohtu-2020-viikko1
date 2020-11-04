@@ -22,6 +22,10 @@ jobs:
     - name: Code coverage rapost
       run: ./gradlew jacocoTestReport
     - name: Data to codecov
+<<<<<<< HEAD
       run: bash <(curl -s https://codecov.io/bash)
     - name: checkstyle
       run:  ./gradlew checkstyleMain
+=======
+      run: bash <(curl -s https://codecov.io/bash)
+>>>>>>> master
