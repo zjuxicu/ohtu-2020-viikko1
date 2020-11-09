@@ -1,10 +1,7 @@
 plugins {
     id 'application' 
     id 'jacoco'
-<<<<<<< HEAD
     id 'checkstyle'
-=======
->>>>>>> master
 }
 
 repositories {
@@ -18,19 +15,11 @@ dependencies {
 }
 
 application {
-<<<<<<< HEAD
-    mainClass = 'paaohjelma.Main'
-}
-jar {
-    manifest {
-        attributes 'Main-Class': 'paaohjelma.Main'
-=======
     mainClass = 'ohtu.ohtuvarasto.Main'
 }
 jar {
     manifest {
         attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
->>>>>>> master
     }
 }
 jacocoTestReport {
@@ -38,12 +27,9 @@ jacocoTestReport {
         xml.enabled true
         html.enabled true
     }
-<<<<<<< HEAD
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: ['paaohjelma/**'])
         }))
     }
-=======
->>>>>>> master
 }
